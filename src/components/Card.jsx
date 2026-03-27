@@ -1,4 +1,4 @@
-
+import {link} from 'react-router-dom'
 const Card = ({ data, styles }) => {
   return (
         <div className={styles.backgroundColor + ' ' + styles.padding + ' ' + styles.borderRadius + ' ' + styles.shadow}>
@@ -6,12 +6,12 @@ const Card = ({ data, styles }) => {
         <p className="mt-2 mb-4">
               {data.description}
         </p>
-        <a
-              href={data.link}
+        <link
+              to={data.link}
               className="inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700"
             >
               {data.linkText}
-            </a>
+            </link>
           </div>
   )
 }
