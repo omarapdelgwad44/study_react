@@ -1,6 +1,6 @@
 import React from 'react'
 
-const footer = ({btn="View All Jobs"}) => {
+const footer = ({btn="View All Jobs "}) => {
   return (
        <section className="m-auto max-w-lg my-10 px-6">
       <a
