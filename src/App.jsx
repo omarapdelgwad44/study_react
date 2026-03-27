@@ -1,19 +1,17 @@
- import React from 'react'
- import Nav from './components/NavBar';
- import Hero from './components/Hero';
- import DevelopersAndEmployers from './components/Cards';
- import BrowseJobs from './components/BrowseJobs';
- import Footer from './components/footer';
+ import {Route,createBrowserRouter,createRoutesFromElements,RouterProvider} from 'react-router-dom';
+import Main from './layouts/Main';
+ import Home from './pages/Home';
  
+ const router = createBrowserRouter(
+   createRoutesFromElements(
+    <Route path='/' element={<Main/>} >
+      <Route index element={<Home/>} />
+    </Route>
+   )
+ )
  const App = () => {
    return (
-     <>
-     <Nav/>
-     <Hero/>
-     <DevelopersAndEmployers/>   
-     <BrowseJobs/>
-     <Footer/>
-     </>
+      <RouterProvider router={router} />
     )
  }
  

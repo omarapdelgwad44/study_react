@@ -1,6 +1,5 @@
-import React from 'react'
 
-const footer = ({btn="View All Jobs "}) => {
+const ViewAll = ({btn="View All Jobs "}) => {
   return (
        <section className="m-auto max-w-lg my-10 px-6">
       <a
@@ -12,4 +11,4 @@ const footer = ({btn="View All Jobs "}) => {
   )
 }
 
-export default footer
+export default ViewAll

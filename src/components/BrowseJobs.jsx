@@ -1,4 +1,3 @@
-import React from 'react'
 import jobs from '../data/jobs.json'
 import JobCard from './JobCard';
 const receentlyAddedJobs = jobs.jobs.slice(0, 3);
