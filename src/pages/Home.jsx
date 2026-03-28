@@ -8,7 +8,7 @@ const Home = () => {
      <>
      <Hero/>
      <DevelopersAndEmployers/>   
-     <BrowseJobs/>
+     <BrowseJobs title='Recent Jobs'/>
      <ViewAll/>
      </>
   )

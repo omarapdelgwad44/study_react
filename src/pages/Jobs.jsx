@@ -1,8 +1,9 @@
-import React from 'react'
+import BrowseJobs from "../components/BrowseJobs"
+import jobs from "../data/jobs.json"
 
 const Jobs = () => {
   return (
-    <div>Jobs</div>
+    <BrowseJobs NumberOfJobs={jobs.jobs.length} />
   )
 }
 
