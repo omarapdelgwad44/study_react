@@ -1,6 +1,7 @@
 import { useState , useEffect } from 'react';
 import axios from "axios";
 import Spinner from './Spinner';
+import Error from './Error';
 // import jobs from '../data/jobs.json'
 import JobCard from './JobCard';
 
@@ -11,7 +12,7 @@ const BrowseJobs = ({IsHome=false, title = "Browse Jobs"}) => {
     useEffect(() => {
         const fetchJobs = async () => {
           try {
-            const response = await axios.get("/jobs");
+            const response = await axios.get(`/jobs${IsHome ? '?per_page=3' : ''}`);
             setJobs(response.data);
             // console.log(response);
             setLoading(false);
@@ -26,9 +27,9 @@ const BrowseJobs = ({IsHome=false, title = "Browse Jobs"}) => {
     return <Spinner loading={loading} />;
   }
   if (error) {
-    return <p>Error: {error.message}</p>;
+    return <Error />;
   }
-  const receentlyAddedJobs = IsHome ? jobs.data.slice(0,3) : jobs.data;
+  const receentlyAddedJobs =  jobs.data;
   // console.log(jobs);
   return (
     <section className="bg-blue-50 px-4 py-10">
