@@ -5,7 +5,7 @@ import App from './App.jsx'
 
 // --- إعدادات Axios ---
 import axios from 'axios';
-axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
+// We now rely on 'vite.config.js' Proxy instead of external environment variables
 // --------------------
 
 createRoot(document.getElementById('root')).render(
