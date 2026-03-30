@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useNavigate, useLoaderData, useParams } from "react-router-dom";
+import { toast } from 'react-toastify';
+
 
 const AddJob = ({ addJobSubmit, updateJobSubmit }) => {
 
@@ -26,9 +28,11 @@ const AddJob = ({ addJobSubmit, updateJobSubmit }) => {
         
         if (isEdit) {
             await updateJobSubmit({ ...formData, id: job.id, company_id: job.company.id });
+            toast.success('Job Updated Successfully');
             navigate(`/job/${job.id}`);
         } else {
             await addJobSubmit(formData);
+            toast.success('Job Added Successfully');
             navigate('/jobs');
         }
     };

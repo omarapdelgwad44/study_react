@@ -1,6 +1,9 @@
 import { Outlet, useNavigation } from 'react-router-dom';
 import Nav from '../components/NavBar';
 import Spinner from '../components/Spinner';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Main = () => {
   const navigation = useNavigation();
@@ -10,7 +13,9 @@ const Main = () => {
     <>  
       <Nav />
       {isLoading ? <Spinner loading={true} /> : <Outlet />}
+      <ToastContainer position="top-right" autoClose={3000} />
     </>
+
   )
 }
 
