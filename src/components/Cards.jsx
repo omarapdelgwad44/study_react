@@ -2,7 +2,7 @@ import Card from './card';
 const forDevelopers = {
   title: "For Developers",
   description: "Browse our React jobs and start your career today",
-  link: "/jobs.html",
+  link: "/jobs",
   linkText: "Browse Jobs"
 }
 const forDevelopersStyles = {
@@ -14,7 +14,7 @@ const forDevelopersStyles = {
 const forEmployers = {
   title: "For Employers",
   description: "List your job to find the perfect developer for the role",
-  link: "/add-job.html",
+  link: "/add-job",
   linkText: "Add Job"
 }
 const forEmployersStyles = {

@@ -4,13 +4,22 @@
 // import Error from './Error';
 // import jobs from '../data/jobs.json'
 // -------------------------------------------
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData , Link, useNavigate } from 'react-router-dom';
 import {FaMapMarker} from 'react-icons/fa';
-import axios from "axios";
 import GoBackBtn from '../components/GoBackBtn';
 
-const ShowJob = () => {
+
+const ShowJob = ({ deleteJob }) => {
   const job = useLoaderData();
+  const navigate = useNavigate();
+
+  const onDeleteClick = async (jobId) => {
+    const confirm = window.confirm('Are you sure you want to delete this job?');
+    if (!confirm) return;
+
+    await deleteJob(jobId);
+    navigate('/jobs');
+  };
 
   // ----- Old approach for your reference -----
   // const [jobs, setJobs] = useState([]);
@@ -99,12 +108,13 @@ const ShowJob = () => {
             {/* Manage */}
             <div className="bg-white p-6 rounded-lg shadow-md mt-6">
               <h3 className="text-xl font-bold mb-6">Manage Job</h3>
-              <a
-                href="/add-job.html"
+              <Link
+                to={`/edit-job/${job.data.id}`}
                 className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
-                >Edit Job</a
-              >
+                >Edit Job
+                </Link>
               <button
+                onClick={() => onDeleteClick(job.data.id)}
                 className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
                 Delete Job
@@ -118,10 +128,4 @@ const ShowJob = () => {
     )
 };
 
-const JobLoader = async ({ params }) => {
-  const response = await axios.get(`/api/jobs/${params.id}`);
-  console.log(response);
-  return response.data;
-};
-
-export { ShowJob as default , JobLoader };
+export default ShowJob;

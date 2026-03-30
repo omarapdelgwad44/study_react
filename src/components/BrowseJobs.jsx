@@ -5,8 +5,8 @@
 // import jobs from '../data/jobs.json'
 // -------------------------------------------
 import { useLoaderData } from 'react-router-dom';
-import axios from "axios";
 import JobCard from './JobCard';
+
 
 const BrowseJobs = ({ IsHome = false, title = "Browse Jobs" }) => {
   const jobs = useLoaderData();
@@ -56,9 +56,4 @@ const BrowseJobs = ({ IsHome = false, title = "Browse Jobs" }) => {
     </>
   );
 }
-const JobsLoader = async () => {
-  const response = await axios.get('/api/jobs');
-  return response.data;
-}
-
-export { BrowseJobs as default, JobsLoader };
+export default BrowseJobs;
