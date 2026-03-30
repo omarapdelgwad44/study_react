@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom'
 const ViewAll = ({btn="View All Jobs "}) => {
   return (
+    <>
     <section className="m-auto max-w-lg my-10 px-6">
       <Link
         to="/jobs"
@@ -9,6 +10,7 @@ const ViewAll = ({btn="View All Jobs "}) => {
         {btn}
       </Link>
     </section>
+    </>
   )
 }
 

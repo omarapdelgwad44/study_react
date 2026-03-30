@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 const Card = ({ data, styles }) => {
   return (
+    <>
         <div className={styles.backgroundColor + ' ' + styles.padding + ' ' + styles.borderRadius + ' ' + styles.shadow}>
         <h2 className="text-2xl font-bold">{data.title}</h2>
         <p className="mt-2 mb-4">
@@ -13,6 +14,7 @@ const Card = ({ data, styles }) => {
               {data.linkText}
             </Link>
           </div>
+    </>
   )
 }
 

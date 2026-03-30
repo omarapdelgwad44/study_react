@@ -4,7 +4,7 @@ import './css/index.css'
 import App from './App.jsx'
 
 // --- إعدادات Axios ---
-import axios from 'axios';
+// import axios from 'axios';
 // We now rely on 'vite.config.js' Proxy instead of external environment variables
 // --------------------
 

@@ -7,12 +7,14 @@ const defaultOverride = {
 
 const Spinner = ({ loading, override = defaultOverride }) => {
   return (
+    <>
     <ClipLoader
       loading={loading}
       color="#4338ca"
       cssOverride={override}
       size={150}
     />
+    </>
   );
 };
 

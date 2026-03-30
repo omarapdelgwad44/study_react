@@ -7,7 +7,7 @@ const JobCard = ({ job }) => {
   const [showMore, setShowMore] = useState(false);
   let description = job.description.slice(0, 90) + '...';
   return (
-    
+    <>
     <div className="bg-white rounded-xl shadow-md relative" key={job.id}>
       <div className="p-4">
         <div className="mb-6">
@@ -32,6 +32,7 @@ const JobCard = ({ job }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
